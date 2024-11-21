@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
       <header className="navbar">
-        <div className="navbar-title">Meu Título</div>
+        <div className="navbar-title">Gerenciamento de Tarefas</div>
         <nav className="navbar-links">
             <Link to='/'>Cadastro de Usuários</Link>
             <Link to='/tasks/new'>Cadastro de Tarefas</Link>

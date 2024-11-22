@@ -3,6 +3,7 @@ import Navbar from "../components/Header";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from 'sweetalert2';
+import styles from "../css/Forms.module.css"
 
 
 const UpdateTask = () => {
@@ -150,30 +151,32 @@ const UpdateTask = () => {
     return (
         <>
             <Navbar />
-            <div>
+            <div className={styles.formContainer}>
                 {formData ? (
-                    <form onSubmit={handleUpdate}>
+                    <form className={styles.form} onSubmit={handleUpdate}>
                         <h2>Atualizar Tarefa</h2>
 
-                        <div>
+                        <div className={styles.formGroup}>
                             <label>Descrição</label>
                             <input
                                 type="text"
                                 id="nome"
                                 name="task_description"
                                 value={formData.task_description}
+                                className={styles.input}
 
                                 required
                             />
                         </div>
 
-                        <div>
+                        <div className={styles.formGroup}>
                             <label>Setor</label>
                             <input
                                 type="text"
                                 id="setor"
                                 name="sector"
                                 value={formData.sector}
+                                className={styles.input}
 
                                 required
                             />
@@ -182,9 +185,10 @@ const UpdateTask = () => {
 
 
 
-                        <div>
+                        <div className={styles.formGroup}>
                             <label>Usuário</label>
                             <select
+                             className={styles.input}
                                 id="users"
                                 value={formData.user || ""} // Apenas o ID do usuário
                                 onChange={(e) =>
@@ -204,11 +208,12 @@ const UpdateTask = () => {
                             </select>
                         </div>
 
-                        <div>
+                        <div className={styles.formGroup}>
                             <label>Status</label>
                             <select
 
                                 id="status"
+                                className={styles.input}
                                 value={formData.taskStatus}
                                 onChange={(e) => setFormData({ ...formData, taskStatus: e.target.value })}
                                 required
@@ -224,11 +229,12 @@ const UpdateTask = () => {
 
 
 
-                        <div>
+                        <div className={styles.formGroup}>
                             <label>Prioridade</label>
                             <select
 
                                 id="prioridade"
+                                className={styles.input}
                                 value={formData.priority}
                                 onChange={(e) => setFormData({ ...formData, priority: e.target.value })}
                                 required
@@ -244,7 +250,7 @@ const UpdateTask = () => {
 
 
 
-                        <button type="submit">Atualizar</button>
+                        <button className={styles.submitButton} type="submit">Atualizar</button>
                     </form>
                 ) : (
                     <p>Carregando as informações</p>

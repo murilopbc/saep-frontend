@@ -2,6 +2,7 @@ import axios from "axios";
 import Navbar from "../components/Header";
 import { useState } from "react";
 import Swal from 'sweetalert2';
+import styles from "../css/Forms.module.css"
 const RegisterUser = () => {
 
     const [formData, setFormData] = useState({
@@ -93,47 +94,50 @@ const RegisterUser = () => {
         <>
 
             <Navbar />
-            <div>
-                <form onSubmit={handleSubmit}>
+            <div className={styles.formContainer}>
+                <form className={styles.form} onSubmit={handleSubmit}>
                     <h2>Cadastro de Usuário</h2>
 
-                    <div>
-                        <label>Nome</label>
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>Nome</label>
                         <input
                             type="text"
                             id="nome"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
+                            className={styles.input}
                             required
                         />
                     </div>
 
-                    <div>
-                        <label>Email</label>
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>Email</label>
                         <input
                             type="email"
                             id="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
+                            className={styles.input}
                             required
                         />
                     </div>
 
-                    <div>
-                        <label>Senha</label>
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>Senha</label>
                         <input
                             type="password"
                             id="senha"
                             name="password"
                             value={formData.password}
                             onChange={handleChange}
+                            className={styles.input}
                             required
                         />
                     </div>
 
-                    <button type="submit">Cadastrar</button>
+                    <button className={styles.submitButton} type="submit">Cadastrar</button>
                 </form>
             </div>
 

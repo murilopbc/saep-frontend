@@ -1,18 +1,24 @@
 .navbar {
+    background-color: #333;
+    padding: 10px;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #ccc;
-    color: #0000;
-}
-
-.navbar-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.navbar-links {
+  }
+  
+  .nav {
     display: flex;
-    margin-left: auto;
-}
+    gap: 20px;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    transition: color 0.3s;
+  }
+  
+  .nav a:hover {
+    color: #007bff; /* Altera a cor ao passar o mouse */
+  }
+  
